@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>media list</title>
+</head>
+<body>
+{% if media_list %}
+
+<table>
+  <thead>
+  <th>id</th>
+  <th>name</th>
+  <th>type</th>
+  <th>formate</th>
+  <th>size</th>
+  <th>Duration</th>
+  </thead>
+  {% for md in media_list %}
+  <tbody>
+<tr>
+    <td> {{md.id}}</td>
+    <td> {{md.name}}</td>
+    <td>{{md.type}}</td>
+    <td>{{md.formate}}</td>
+    <td>{{md.size}}</td>
+    <td>{{md.duration_sec}}</td>
+</tr>
+
+  </tbody>
+</table>
+{% endfor %}
+
+{% else %}
+
+
+
+
+<h1> empty list!!!</h1>
+{% endif %}
+</body>
+</html>
