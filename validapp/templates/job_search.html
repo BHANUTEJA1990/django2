@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>job list</title>
+</head>
+<style>
+div.relative {
+  position: relative;
+  left: 80px;
+  border: 3px solid black;
+}
+</style>
+<body>
+<h1 style="background-color: aqua;border: 1px aqua;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 50px;
+    margin-left: 80px;">JOB SEARCH DATA </h1>
+<p style="background-color: green;border: 1px green;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 50px;
+    margin-left: 80px;">here two validator in applied one in the age >=18 for eligible for job and notice period must be lessthen 30day,
+ </p>
+{% if job_list %}
+
+<div class="relative"><table>
+  <thead>
+  <th>id</th>
+  <th>name</th>
+  <th>role<th>
+  <th>location</th>
+  <th>salary</th>
+  <th>notice_period</th>
+  <th>age</th>
+
+
+  </thead>
+  {% for jb in job_list %}
+  <tbody>
+<tr>
+    <td> {{jb.id}}</td>
+    <td> {{jb.name}}</td>
+    <td>{{jb.role}}</td>
+    <td>{{jb.location}}</td>
+    <td>{{jb.salary}}</td>
+    <td>{{jb.notice_period}}</td>
+    <td>{{jb.age}}</td>
+
+</tr>
+
+  </tbody>
+</table>
+{% endfor %}
+
+{% else %}
+
+
+</div>
+
+<h1> empty list!!!</h1>
+{% endif %}
+</body>
+</html>
