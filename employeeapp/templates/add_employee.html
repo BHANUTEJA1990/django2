@@ -1,0 +1,8 @@
+
+<h1 style="background-color: red;">Employee</h1>
+<form method="post" style="background-color: lightblue;">
+    {% csrf_token %}<br>
+    {{ form.as_p }}<br>
+    {{ form.errors }}
+    <input type="submit"value="Save">
+</form>

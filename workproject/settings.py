@@ -38,6 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'validapp',
+    'studentrelapp',
+    'custom_validator',
+    'productapp',
+    'authorsapp',
+    'employeeapp',
 
 ]
 

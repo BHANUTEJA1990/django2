@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>employee list</title>
+</head>
+<body>
+{% if employee_list %}
+
+<table>
+  <thead>
+  <th>id</th>
+  <th>name</th>
+  <th>salary</th>
+  <th>email</th>
+  <th>Remove</th>
+  <th>add</th>
+  <th>update</th>
+  </thead>
+  {% for el in employee_list %}
+  <tbody>
+<tr>
+    <td style="background-color: lightblue;"> {{el.id}}</td>
+    <td style="background-color: lightblue;"> {{el.name}}</td>
+    <td style="background-color: lightblue;">{{el.salary}}</td>
+    <td style="background-color: lightblue;">{{el.email}}</td>
+    <td><a href="{% url 'del_employee' el.id %}">Delete</a> </td>
+    <td><a href="{% url 'add_employee' %}">add</a> </td>
+    <td><a href="{% url 'update_employee' %}">update</a> </td>
+
+</tr>
+
+  </tbody>
+</table>
+{% endfor %}
+
+{% else %}
+
+
+
+
+<h1> empty list!!!</h1>
+{% endif %}
+</body>
+</html>
